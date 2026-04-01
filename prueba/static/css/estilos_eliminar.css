@@ -1,0 +1,27 @@
+body {
+    font-family: Arial;
+            background: linear-gradient(to right, #1e90ff, #87CEEB);
+            text-align: center;
+}
+.box {
+    background: linear-gradient(to bottom, #f0f8ff, #d6ecfa);
+    padding: 20px;
+    width: 400px;
+    margin: 100px auto;
+    border-radius: 10px;
+}
+    button {
+    padding: 10px;
+    margin: 10px;
+    width: 120px;
+}
+.eliminar {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+}
+.cancelar {
+    background-color: whitesmoke;
+    color: #6c757d;
+    border: none;
+}

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Confirmar eliminación</title>
+    <link rel="stylesheet" href="../static/css/estilos_eliminar.css"
+</head>
+<body>
+
+<div class="box">
+    <h3> Confirmar eliminación</h3>
+
+    <p>
+        ¿Deseas eliminar el producto:<br>
+        <b>{{ datos[0] }}</b> (Cantidad: {{ datos[1] }})?
+    </p>
+
+    <form method="POST">
+        <button class="eliminar" type="submit">Sí, eliminar</button>
+        <a href="/inventario">
+            <button class="cancelar" type="button">Cancelar</button>
+        </a>
+    </form>
+</div>
+
+</body>
+</html>
