@@ -2,25 +2,29 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Confirmar eliminación</title>
-    <link rel="stylesheet" href="../static/css/estilos_eliminar.css"
+    <title>Eliminar Equipo</title>
+    <link rel="stylesheet" href="../static/css/estilos_eliminar.css">
 </head>
 <body>
 
-<div class="box">
-    <h3> Confirmar eliminación</h3>
+<div class="container">
+    <div class="card danger">
+        <h2>⚠️ Eliminar Equipo</h2>
 
-    <p>
-        ¿Deseas eliminar el producto:<br>
-        <b>{{ datos[0] }}</b> (Cantidad: {{ datos[1] }})?
-    </p>
+        <p>
+            ¿Seguro que deseas eliminar el equipo:
+            <strong>{{ producto[10] }}</strong>?
+            <strong>{{ producto[2] }}</strong>
+        </p>
 
-    <form method="POST">
-        <button class="eliminar" type="submit">Sí, eliminar</button>
-        <a href="/inventario">
-            <button class="cancelar" type="button">Cancelar</button>
-        </a>
-    </form>
+        <form method="POST">
+            <button type="submit" class="btn-danger">
+                Sí, eliminar
+            </button>
+        </form>
+
+        <a href="/usuarios">inventario Cancelar</a>
+    </div>
 </div>
 
 </body>

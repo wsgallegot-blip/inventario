@@ -1,49 +1,33 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Editar producto</title>
-    <link rel="stylesheet" href="../static/css/estilos_editar.css">
+    <title>Editar Equipo</title>
+    <link rel="stylesheet" href="../static/css/estilos_editar.css"
 </head>
 <body>
 
-<div class="contenedor">
-    <h2>Editar Producto</h2>
+<div class="container">
+    <div class="card">
+        <h2>✏️ Editar Equipo</h2>
 
-    <form method="POST">
+        <form method="POST">
+            <input type="text" name="nombre" value="{{ producto[2] }}" required>
+            <input type="text" name="marca" value="{{ producto[3] }}">
+            <input type="text" name="tipo" value="{{ producto[4] }}">
+            <input type="text" name="imei" value="{{ producto[5] }}">
+            <input type="text" name="ram" value="{{ producto[6] }}">
+            <input type="text" name="procesador" value="{{ producto[7] }}">
+            <input type="text" name="referencia" value="{{ producto[8] }}">
+            <input type="text" name="capacidad" value="{{ producto[9] }}">
+            <input type="text" name="serial" value="{{ producto[10] }}">
 
-        <div class="grid">
-            <input name="nombre" value="{{ producto[1] }}" placeholder="Nombre" required>
-            <input type="number" name="cantidad" value="{{ producto[2] }}" placeholder="Cantidad" required>
+            <button type="submit">Guardar Cambios</button>
+        </form>
 
-            <input name="marca" value="{{ producto[3] }}" placeholder="Marca">
-            <input name="tipo" value="{{ producto[4] }}" placeholder="Tipo">
-
-            <input name="imei" value="{{ producto[5] }}" placeholder="IMEI">
-            <input name="ram" value="{{ producto[6] }}" placeholder="RAM">
-
-            <input name="procesador" value="{{ producto[7] }}" placeholder="Procesador">
-            <input name="referencia" value="{{ producto[8] }}" placeholder="Referencia">
-
-            <input name="capacidad" value="{{ producto[9] }}" placeholder="Capacidad">
-            <input name="serial" value="{{ producto[10] }}" placeholder="Serial">
-
-            <input name="sede" value="{{ producto[11] }}" placeholder="Sede">
-            <input name="ubicacion" value="{{ producto[12] }}" placeholder="Ubicación">
-
-            <input name="cc" value="{{ producto[13] }}" placeholder="C.C">
-            <input name="persona" value="{{ producto[14] }}" placeholder="Persona responsable">
-        </div>
-
-        <div class="botones">
-            <button type="submit" class="guardar">Guardar cambios</button>
-
-            <a href="/inventario">
-                <button type="button" class="volver">⬅ Volver</button>
-            </a>
-        </div>
-
-    </form>
+    <a href="/usuarios">inventario Volver</a>
+    </div>
 </div>
 
 </body>

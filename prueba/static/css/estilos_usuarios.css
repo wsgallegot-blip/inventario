@@ -1,0 +1,111 @@
+/* ========= RESET ========= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+}
+
+/* ========= BODY ========= */
+body {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #2563eb, #f8fafc);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #111827;
+}
+
+/* ========= CONTENEDOR ========= */
+.container {
+    width: 100%;
+    max-width: 900px;
+    padding: 20px;
+}
+
+/* ========= CARD ========= */
+.card {
+    background: #fff;
+    padding: 30px;
+    border-radius: 14px;
+    box-shadow: 0 15px 40px rgba(0,0,0,.15);
+}
+
+/* ========= TITULO ========= */
+.card h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #1e40af;
+}
+
+/* ========= TABLAS ========= */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+thead {
+    background: #1e40af;
+}
+
+thead th {
+    color: white;
+    padding: 12px;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+tbody td {
+    padding: 10px;
+    text-align: center;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+tbody tr:nth-child(even) {
+    background: #f9fafb;
+}
+
+tbody tr:hover {
+    background: #eef2ff;
+}
+
+/* ========= BOTONES ========= */
+.btn {
+    background: #2563eb;
+    color: white;
+    padding: 8px 14px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: background .3s ease;
+}
+
+.btn:hover {
+    background: #1e40af;
+}
+
+.btn.small {
+    font-size: 0.8rem;
+}
+
+/* ========= LINKS ========= */
+a {
+    display: inline-block;
+    margin-top: 15px;
+    color: #2563eb;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* ========= RESPONSIVE ========= */
+@media (max-width: 768px) {
+    table {
+        font-size: 0.8rem;
+    }
+}

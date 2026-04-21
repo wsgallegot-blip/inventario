@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Inventario del Usuario</title>
+    <link rel="stylesheet"href="{{ url_for('static', filename='css/estilos_inven_usuarios.css') }}">
+
+</head>
+<body>
+
+<div class="container">
+    <div class="card">
+        <h2>📦 Inventario del Usuario 📦</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Equipo</th>
+                    <th>Marca</th>
+                    <th>Tipo</th>
+                    <th>Serial</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+
+                {% for e in equipos %}
+                <tr>
+                    <td>{{ e.nombre }}</td>
+                    <td>{{ e.marca }}</td>
+                    <td>{{ e.tipo }}</td>
+                    <td>{{ e.serial }}</td>
+                    <td>
+                    <a class="btn small" href="/editar/{{ e.id }}">✏️ Editar</a>
+                    <a class="btn small btn-danger" href="/eliminar/{{ e.id }}">🗑️ Eliminar</a>
+                    </td>
+
+                </tr>
+               
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <a href="/usuarios">⬅ Volver a usuarios</a>
+    </div>
+</div>
+
+</body>
+</html>

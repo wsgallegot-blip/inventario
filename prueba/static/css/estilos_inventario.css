@@ -1,23 +1,185 @@
-body{
 
-background: linear-gradient(to right, #1e90ff, #87CEEB);
-
+/* ===============================
+   RESET GLOBAL
+================================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, sans-serif;
 }
+
+/* ===============================
+   BODY CON DEGRADADO
+================================ */
+body {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #2563eb, #f8fafc);
+    color: #111827;
+}
+
+/* ===============================
+   CONTENEDOR GENERAL
+================================ */
+.container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+/* ===============================
+   TITULO
+================================ */
+h1 {
+    text-align: center;
+    color: #1e40af;
+    margin-bottom: 30px;
+}
+
+/* ===============================
+   BOTON SUPERIOR
+================================ */
+.top-actions {
+    text-align: right;
+    margin-bottom: 15px;
+}
+
+.top-actions a {
+    background: #2563eb;
+    color: white;
+    padding: 10px 16px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background 0.3s ease;
+}
+
+.top-actions a:hover {
+    background: #1e40af;
+}
+
+/* ===============================
+   TABLA
+================================ */
 table {
-    background-color: #87CEEB;
+    width: 100%;
     border-collapse: collapse;
-    width: 90%;
+    background: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
 }
-th, td {
-    border: 1px solid #ccc;
-    padding: 6px;
+
+thead {
+    background: #1e40af;
+}
+
+thead th {
+    color: #ffffff;
+    padding: 14px;
+    font-size: 0.9rem;
     text-align: center;
 }
-th {
-    background-color:#d1d5db;
-    color: black;
+
+tbody td {
+    padding: 12px;
+    text-align: center;
+    font-size: 0.9rem;
+    border-bottom: 1px solid #e5e7eb;
 }
-a {
+
+tbody tr:nth-child(even) {
+    background: #f9fafb;
+}
+
+tbody tr:hover {
+    background: #eef2ff;
+}
+
+/* ===============================
+   BOTONES DE ACCIÓN
+================================ */
+.actions {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+}
+
+.actions a {
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 0.8rem;
     text-decoration: none;
-    color: whitesmoke;
+    font-weight: bold;
+}
+
+/* EDITAR */
+.actions .edit {
+    background: #2563eb;
+    color: white;
+}
+
+.actions .edit:hover {
+    background: #1e40af;
+}
+
+/* ELIMINAR */
+.actions form button {
+    background: #dc2626;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.actions form button:hover {
+    background: #b91c1c;
+}
+
+/* ===============================
+   RESPONSIVE
+================================ */
+@media (max-width: 900px) {
+    table {
+        font-size: 0.8rem;
+    }
+
+    thead {
+        display: none;
+    }
+
+    table,
+    tbody,
+    tr,
+    td {
+        display: block;
+        width: 100%;
+    }
+
+    tr {
+        margin-bottom: 15px;
+        border-bottom: 2px solid #e5e7eb;
+    }
+
+    td {
+        text-align: right;
+        padding-left: 50%;
+        position: relative;
+    }
+
+    td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 12px;
+        font-weight: bold;
+        color: #374151;
+        text-align: left;
+    }
+
+    .actions {
+        justify-content: flex-end;
+    }
 }

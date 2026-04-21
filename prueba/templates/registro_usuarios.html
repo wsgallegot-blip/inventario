@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Registrar Usuario</title>
+    <link rel="stylesheet"href="{{ url_for('static', filename='css/estilos_registro.css') }}">
+
+</head>
+
+<body>
+
+<div class="container">
+    <div class="card">
+        <h2>👤 Registrar Usuario</h2>
+
+        <form method="POST">
+           
+            
+            <input type="text" name="nombre" placeholder="Nombre">
+
+            
+            <input type="text" name="apellido" placeholder="apellido" required>
+
+           
+            <input type="text" name="cc" placeholder="cc" required>
+
+            
+            <input type="email" name="correo" placeholder="correo" required>
+
+          
+            <input type="text" name="username" placeholder="username" required>
+
+          
+            <input type="password" name="password" placeholder="pasword" required>
+
+      
+            <select name="rol" aria-placeholder="rol" required>
+
+                <option value="">Seleccione un rol</option>
+                <option value="usuario">Usuario</option>
+                <option value="admin">Administrador</option>
+            </select>
+
+            <button type="submit">Registrar Usuario</button>
+
+           
+        </form>
+
+    <a href="/usuarios">⬅ Volver a usuarios</a>
+    </div>
+</div>
+
+</body>
+</html>

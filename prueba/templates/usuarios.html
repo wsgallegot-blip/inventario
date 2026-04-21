@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Usuarios</title>
+    <link rel="stylesheet"href="{{ url_for('static', filename='css/estilos_usuarios.css') }}">
+</head>
+<body>
+
+<div class="container">
+    <div class="card">
+        <h2>👤 Gestión de Usuarios</h2>
+
+        <!-- Tabla de usuarios -->
+        <table>
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Usuario</th>
+                    <th>Rol</th>
+                    <th>Inventario</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for u in usuarios %}
+                <tr>
+                    <td>{{ u.nombre }} {{ u.apellido }}</td>
+                    <td>{{ u.username }}</td>
+                    <td>{{ u.rol }}</td>
+
+                    <td><a href="/usuarios/{{ u.id_usuario }}/equipos">📦 Ver equipos 📦</a></td>
+
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    
+    <a href="/menu">📋Volver al menú📋</a>
+    <a href="/registro_usuarios">👤registrar usuario👤</a>
+    </div>
+</div>
+
+</body>
+</html>
