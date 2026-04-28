@@ -1,17 +1,17 @@
+
 from flask_mysqldb import MySQL
+from dotenv import load_dotenv
 import os
 
-class Conexion_Db:
-    def __init__(self, app=None):
-        self.conexion = None
-        if app is not None:
-            self.init_app(app)
+load_dotenv()
 
-    def init_app(self, app):
-        app.config['MYSQL_HOST'] = 'localhost'
-        app.config['MYSQL_USER'] = 'flaskuser'
-        app.config['MYSQL_PASSWORD'] = 'password_segura'
-        app.config['MYSQL_DB'] = 'inventario'
-        app.config['MYSQL_PORT'] = 3306
+mysql = MySQL()
 
-        self.conexion = MySQL(app)
+def init_db(app):
+    app.config['MYSQL_HOST'] = os.getenv("DB_HOST")
+    app.config['MYSQL_USER'] = os.getenv("DB_USER")
+    app.config['MYSQL_PASSWORD'] = os.getenv("DB_PASSWORD")
+    app.config['MYSQL_DB'] = os.getenv("DB_NAME")
+    app.config['MYSQL_PORT'] = int(os.getenv("DB_PORT", 3306))
+
+    mysql.init_app(app)

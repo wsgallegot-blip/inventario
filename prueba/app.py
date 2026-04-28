@@ -1,7 +1,7 @@
 import os 
 #os.system('cls'if os.name == 'nt'else 'clear')
 import MySQLdb.cursors
-from conexion_bd import Conexion_Db
+from conexion_bd import mysql, init_db
 from flask import Flask, redirect, render_template, request, session
 from werkzeug.security import check_password_hash ,generate_password_hash
 
@@ -11,9 +11,7 @@ app.secret_key = "clave_super_secreta_123"
 
 # Conexión a la BD
 
-conexion_bd = Conexion_Db(app)
-mysql = conexion_bd.conexion
-
+init_db(app)
 #
 
 @app.route("/", methods=["GET", "POST"])
