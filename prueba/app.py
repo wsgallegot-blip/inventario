@@ -259,5 +259,13 @@ def usuarios():
 
 #
 
+
+cursor = mysql.connection.cursor()
+cursor.execute("SHOW TABLES")
+print(cursor.fetchall())
+cursor.close()
+
+
+
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000, debug=True)
