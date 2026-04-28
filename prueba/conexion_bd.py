@@ -1,16 +1,17 @@
 from flask_mysqldb import MySQL
+import os
 
 class Conexion_Db:
-    def __init__(self,conexion):
-        self.conexion=conexion 
+    def __init__(self, app=None):
+        self.conexion = None
+        if app is not None:
+            self.init_app(app)
 
-        if conexion:
-            self.init_app(conexion)
+    def init_app(self, app):
+        app.config['MYSQL_HOST'] = 'localhost'
+        app.config['MYSQL_USER'] = 'flaskuser'
+        app.config['MYSQL_PASSWORD'] = 'password_segura'
+        app.config['MYSQL_DB'] = 'inventario'
+        app.config['MYSQL_PORT'] = 3306
 
-    def init_app(self,app):
-        app.config['MYSQL_HOST']= 'localhost'
-        app.config['MYSQL_USER']= 'root'
-        app.config['MYSQL_PASSWORD']=''
-        app.config['MYSQL_DB']='inventario'
-        app.config['MYSQL_PORT'] = 3309
         self.conexion = MySQL(app)
