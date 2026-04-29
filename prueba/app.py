@@ -1,7 +1,7 @@
 import os 
 #os.system('cls'if os.name == 'nt'else 'clear')
 import MySQLdb.cursors
-from conexion_bd import mysql, init_db
+from conexion_bd import mysql,conectar_db
 from flask import Flask, redirect, render_template, request, session
 from werkzeug.security import check_password_hash ,generate_password_hash
 
@@ -11,7 +11,7 @@ app.secret_key = "clave_super_secreta_123"
 
 # Conexión a la BD
 
-init_db(app)
+conectar_db(app)
 #
 
 @app.route("/", methods=["GET", "POST"])
@@ -258,12 +258,6 @@ def usuarios():
 #
 
 
-cursor = mysql.connection.cursor()
-cursor.execute("SHOW TABLES")
-print(cursor.fetchall())
-cursor.close()
-
-
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5000, debug=True)
+    app.run(host="192.168.100.84", port=5000, debug=True)
