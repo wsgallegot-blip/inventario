@@ -121,20 +121,20 @@ def inventario():
 
 @app.route("/eliminar/<int:id>", methods=["GET", "POST"])
 def eliminar(id):
-    # 🔐 Seguridad
+    #  Seguridad
     if "id_usuario" not in session or session["rol"] != "admin":
         return "Acceso denegado", 403
 
     cursor = mysql.connection.cursor()
 
-    # ✅ POST → eliminar de verdad
+    #  POST → eliminar de verdad
     if request.method == "POST":
         cursor.execute("DELETE FROM equipos WHERE id = %s", (id,))
         mysql.connection.commit()
         cursor.close()
         return redirect("/inventario")
 
-    # ✅ GET → mostrar confirmación
+    # GET → mostrar confirmación
     cursor.execute("SELECT * FROM equipos WHERE id = %s", (id,))
     producto = cursor.fetchone()
     cursor.close()
@@ -212,7 +212,7 @@ def registro_usuarios():
         mysql.connection.commit()
         cursor.close()
 
-        # ✅ CLAVE: redirigir a usuarios
+        # redirigir a usuarios
         return redirect("/usuarios")
 
     return render_template("registro_usuarios.html")
